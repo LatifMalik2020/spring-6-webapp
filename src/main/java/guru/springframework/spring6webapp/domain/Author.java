@@ -2,6 +2,7 @@ package guru.springframework.spring6webapp.domain;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -16,7 +17,7 @@ public class Author {
     private Set<Book> books;
 
     public Set<Book> getBooks() {
-        return books;
+        return books = new HashSet<>(); // this is a fix for the null pointer exception
     }
 
     public void setBooks(Set<Book> books) {
